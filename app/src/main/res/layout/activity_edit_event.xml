@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:background="@color/recyclerViewbacground"
+    tools:context=".EditEventActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.dragon.calendarprovidertest.calendar.EditEventActivity">
+
+        <LinearLayout
+            android:id="@+id/llHeader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/header_height"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:background="@color/textInputViewActived"
+            android:weightSum="1.0">
+
+            <LinearLayout
+                android:layout_weight="0.2"
+                android:layout_width="0dp"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivDelete"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginRight="@dimen/widget_margin"
+                    android:alpha="0.7"
+                    android:onClick="deleteEvent"
+                    android:src="@drawable/ic_remove" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/widget_margin"
+                android:layout_weight="0.65">
+
+                <TextView
+                    android:id="@+id/tv_event_head"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:text="@string/event_title"
+                    android:textSize="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_weight="0.2">
+
+                <ImageView
+                    android:id="@+id/ivSave"
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:layout_marginRight="@dimen/widget_margin"
+                    android:alpha="0.7"
+                    android:onClick="saveEvent"
+                    android:src="@drawable/ic_save" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/activity_vertical_margin"
+            android:layout_below="@+id/llHeader">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ll_Title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+                    <ImageView
+                        android:id="@+id/ivTitle"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/ic_subject" />
+
+                    <EditText
+                        android:id="@+id/etTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvTitle"
+                        android:hint="@string/edit_title" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llFrom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_Title"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/ivTime"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/clock"/>
+
+                    <Button
+                        android:id="@+id/btnDate"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/recyclerViewbacground"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:layout_weight="0.45"/>
+
+                    <Button
+                        android:id="@+id/btnFromTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:background="@color/recyclerViewbacground"
+                        android:layout_weight="0.25"/>
+
+                    <Button
+                        android:id="@+id/btnToTime"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:background="@color/recyclerViewbacground"
+                        android:layout_weight="0.25"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_Allday"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/llFrom"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+                    <ImageView
+                        android:id="@+id/ivAllday"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/alldayicon" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <Switch
+                            android:id="@+id/switchAllday"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/all_day" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_Alarm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ll_Allday"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+                    <ImageView
+                        android:id="@+id/ivAlarm"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/alarmicon" />
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="right">
+
+                        <Switch
+                            android:id="@+id/switchAlarm"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/alarm" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_Repeat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_Alarm"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:weightSum="1">
+
+                    <ImageView
+                        android:id="@+id/tvRepeat"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/ic_repeat" />
+
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/ll_Allday"
+                        android:layout_weight="0.5" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llLocation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ll_Repeat"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+                    <ImageView
+                        android:id="@+id/ivLocation"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/location" />
+
+                    <EditText
+                        android:id="@+id/etLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/location" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/llDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/llLocation"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin">
+
+                    <ImageView
+                        android:id="@+id/ivDescription"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="@dimen/widget_margin"
+                        android:alpha="0.7"
+                        android:src="@drawable/descriptionicon" />
+
+                    <EditText
+                        android:id="@+id/etDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/description" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

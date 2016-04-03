@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="@color/recyclerViewbacground"
+    tools:context=".todo.PostponeToDoActivity">
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/recyclerViewbacground"
+    tools:context="ml.mk.jm.ay.ak.studenttoolkit.todo.NewToDoActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Diamond-->
+        <CheckBox android:id="@+id/checkboxShowVoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/show"
+            android:onClick="onCheckboxClicked"/>
+        <ImageButton
+            android:id="@+id/imageButtonSpeak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/microphone"
+            android:onClick="onClickSpeak"
+            android:background="@color/recyclerViewbacground" />
+
+        <TextView
+            android:id="@+id/txtViewTap"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Tap Mic to speak"
+            android:gravity="center"
+            />
+        <!--End Diamond-->
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/title"
+        android:id="@+id/newTitle"
+        android:singleLine="false"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="@string/description"
+        android:id="@+id/newDescription" />
+        <TableRow> <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/new_date_spinner"
+            android:layout_column="0"
+            />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/new_time_spinner"
+                android:layout_column="1"
+                />
+
+    </TableRow>
+
+
+
+
+
+            <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/save"
+            android:id="@+id/saveButton" />
+
+
+
+        <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/cancel"
+        android:id="@+id/cancelButton" />
+
+                <CalendarView
+
+                    android:layout_height="330dp"
+                    android:id="@+id/newCalView"
+                    android:layout_weight=".33"
+                    android:layout_width="0dip"
+
+                    />
+
+                <TimePicker
+
+                    android:layout_height="wrap_content"
+                    android:id="@+id/newTimePicker"
+                    android:layout_weight=".33"
+                    android:layout_width="0dip"
+                    android:timePickerMode="spinner"
+
+                    />
+
+    </TableLayout>
+
+</RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>
